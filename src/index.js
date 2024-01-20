@@ -4,9 +4,15 @@
 */
 
 import React from "react";
-import ReactDOM from "react-dom";
+import {createRoot} from "react-dom/client";
 
-ReactDOM.render(
-  <h1>Hello!</h1>,
-  document.getElementById("root")
-)
+import Counter, { randNumber } from "./utils/functions";
+
+const n = new Counter();
+n.change(randNumber(101));
+console.log(n.val)
+n.inc()
+n.inc()
+
+const tag = createRoot(document.getElementById("root"));
+tag.render(<h1>{n.val}</h1>)
