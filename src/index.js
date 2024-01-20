@@ -6,13 +6,9 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
 
-import Counter, { randNumber } from "./utils/functions";
+import App from "./App";
 
-const n = new Counter();
-n.change(randNumber(101));
-console.log(n.val)
-n.inc()
-n.inc()
+import "./index.css";
 
 const tag = createRoot(document.getElementById("root"));
-tag.render(<h1>{n.val}</h1>)
+tag.render(<App/>)

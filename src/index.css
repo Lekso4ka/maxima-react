@@ -1,4 +1,26 @@
-body {
+* {
   margin: 0;
+  box-sizing: border-box;
+}
+body { 
   font-family: sans-serif;
+}
+#root {
+  height: 100vh;
+  padding: 50px;
+}
+#root>div {
+  display: grid;
+  gap: 30px;
+  height: 100%;
+}
+
+#root>div>* {
+  background-color: rgba(192, 192, 192, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: blue;
+  margin: 0;
 }
