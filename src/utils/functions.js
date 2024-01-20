@@ -4,6 +4,13 @@ export const randNumber = function(max = 100, min = 0) {
 export const getRGB = () => {
     return `rgb(${randNumber(256)}, ${randNumber(256)}, ${randNumber(256)})`
 }
+export const getArray = (n) => {
+    const arr = [];
+    while (n--) {
+        arr.push(null);
+    }
+    return arr;
+}
 
 class Counter {
     constructor() {
