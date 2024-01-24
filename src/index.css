@@ -7,7 +7,7 @@ body {
 }
 #root {
   height: 100vh;
-  padding: 50px;
+  /* padding: 50px; */
 }
 #root>div {
   display: grid;
@@ -23,6 +23,10 @@ h1 {
   text-align: center;
   color: blue;
   margin: 0;
+}
+
+h2 {
+  color: gray;
 }
 
 .weather-card {
@@ -50,4 +54,29 @@ h1 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-content: flex-start;
+}
+
+.second__content {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+h2:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+section {
+  padding: 50px;
+}
+section:nth-of-type(2n) {
+  background-color: #222;
+  color: #fff;
+}
+
+.bottom__content {
+  display: grid;
+  grid-template-columns: 300px;
+  gap: 30px;
 }

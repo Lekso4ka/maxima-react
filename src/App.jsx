@@ -1,52 +1,39 @@
-import { getRGB, randNumber, getArray } from "./utils/functions"
+import { getArray } from "./utils/functions"
 
-const icons = [
-    "car",
-    "rocket",
-    "train",
-    "bicycle",
-    "truck",
-    "subway",
-    "plane",
-    "ship"
-];
-
-const Card = () => {
-    const color = getRGB();
-    const icon = icons[randNumber(icons.length)]
-    const st = {
-        backgroundColor: color,
-        boxShadow: `0 0 5px #0008, 0 0 5px 2px ${color}`
-    }
-    return <div className="weather-card" style={st}>
-        <i className={`fa fa-${icon}`} />
-        <hr />
-        <h3>{randNumber(20, -20)}˚C</h3>
-    </div>
-}
+import TestCard from "./components/TestCard/TestCard.jsx";
+import TextBlock from "./components/TextBlock/TextBlock";
 
 const App = () => {
-    // let n = 15;
-    // const arr = [];
-    // while(n--) {
-    //     arr.push(randNumber(5, 1));
-    // }
-    // console.log(arr);
+   
+    // const arr = getArray(20);
 
-    // const newArr = [];
-
-    // for (let i = 0; i < arr.length; i++) {
-    //     newArr.push(<span key={i}>{arr[i]}</span>)
-    // }
-
-    const arr = getArray(20);
-
-    return <div className="weather-grid">
-       {/* {arr.map((item, index) => <span key={index}>{item}</span>)} */}
-       {/* {newArr} */}
-
-       {arr.map((item ,index) => <Card key={index}/>)}
-    </div>
+    return <>
+        <header></header>
+        <section className="banner">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, quod.</h1>
+        </section>
+        <section className="second">
+            <h2>Точно подойдет для:</h2>
+            <div className="second__content">
+                <TextBlock 
+                    name="Caption" 
+                    text="Hello my Component!"
+                />
+                <TextBlock name="=)"/>
+            </div>
+        </section>
+        <section>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, cumque.</h2>
+        </section>
+        <section className="bottom">
+            <h2>Точно подойдет для:</h2>
+            <div className="bottom__content">
+                <TextBlock/>
+                <TextBlock name="123"/>
+                <TextBlock/>
+            </div>
+        </section>
+    </>
 }
 
 export default App;

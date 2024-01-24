@@ -1,0 +1,10 @@
+.text-block {
+    display: grid;
+    gap: 16px;
+}
+.text-block__caption {
+    font-size: 24px;
+}
+.text-block__text {
+    font-size: 12px;
+}
