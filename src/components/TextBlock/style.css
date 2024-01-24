@@ -8,3 +8,6 @@
 .text-block__text {
     font-size: 12px;
 }
+.text-block__caption_green {
+    color: #6BFFCA;
+}

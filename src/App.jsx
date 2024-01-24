@@ -2,10 +2,9 @@ import { getArray } from "./utils/functions"
 
 import TestCard from "./components/TestCard/TestCard.jsx";
 import TextBlock from "./components/TextBlock/TextBlock";
+import textContent from "./assets/data/text.json";
 
 const App = () => {
-   
-    // const arr = getArray(20);
 
     return <>
         <header></header>
@@ -15,11 +14,10 @@ const App = () => {
         <section className="second">
             <h2>Точно подойдет для:</h2>
             <div className="second__content">
-                <TextBlock 
-                    name="Caption" 
-                    text="Hello my Component!"
-                />
-                <TextBlock name="=)"/>
+                {textContent
+                    .filter(item => item.block === "second")
+                    .map((item, i) => <TextBlock key={i} name={item.title} text={item.content} color="blueviolet"/>)
+                }
             </div>
         </section>
         <section>
@@ -28,9 +26,16 @@ const App = () => {
         <section className="bottom">
             <h2>Точно подойдет для:</h2>
             <div className="bottom__content">
-                <TextBlock/>
-                <TextBlock name="123"/>
-                <TextBlock/>
+                {textContent
+                    .filter(item => item.block === "bottom")
+                    .map((item, i) => <TextBlock 
+                        key={i}
+                        name={item.title} 
+                        text={item.content}
+                        variant="colorize"
+                        // color="#89ffad"
+                    />)
+                }
             </div>
         </section>
     </>
