@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import TextBlock from "./components/TextBlock/TextBlock";
 import textContent from "./assets/data/text.json";
 import Layout from "./components/Layout";
@@ -6,9 +8,34 @@ import SimpleCard from "./components/SimpleCard";
 import pic1 from "./assets/images/pic1.png";
 import pic2 from "./assets/images/pic2.png";
 
+// https://habr.com/ru/articles/358090/
+
+const counterSt = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "20px"
+}
 
 
 const App = () => {
+
+    // props - статичный параметр - никогда не изменяется
+    // state - состояние - динамически изменяющийся поараметр в React
+
+    /* хук состояния 
+        [сама изменяемая переменная, функция, которая будет изменять эту переменную] = useState(значение переменной, заданное по умолчанию)
+    */
+    const [n, changeN] = useState(10);
+    
+    const clickMinus = () => {
+        changeN(n - 1)
+        console.log("minus", n);
+    }
+    const clickPlus = () => {
+        changeN(n + 1)
+        console.log("plus", n);
+    }
 
     return <>
         <header></header>
@@ -30,7 +57,13 @@ const App = () => {
             }
         </Layout>
         
-        <Layout/>
+        <Layout>
+            <div style={counterSt}>
+                <button onClick={clickMinus}>-</button>
+                <span>{n}</span>
+                <button onClick={(e) => clickPlus()}>+</button>
+            </div>
+        </Layout>
         <Layout 
             name="Точно подойдет для:"
             size="300px"
