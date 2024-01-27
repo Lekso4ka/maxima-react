@@ -3,16 +3,17 @@ import {useState} from "react";
 import "./style.css";
 
 export default ({
-    setOpenModal
+    setOpenModal,
+    openModal
 }) => {
 
-    const [name, setName] = useState("123");
+    const [name, setName] = useState("");
     const [age, setAge] = useState(14);
-
-    
 
     const closeHandler = () => {
         setOpenModal(false);
+        setAge(14);
+        setName("");
     }
 
     const handler = (e) => {
@@ -24,7 +25,7 @@ export default ({
         closeHandler()
     }
 
-    return <div className="modal-wrapper">
+    return <div className={openModal ? "modal-wrapper active" : "modal-wrapper"}>
         <div className="modal">
             <div className="modal__close" onClick={closeHandler}>
                 <i className="fa fa-times"/>

@@ -56,3 +56,9 @@ h1 {
   grid-template-columns: 300px;
   gap: 30px;
 }
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}

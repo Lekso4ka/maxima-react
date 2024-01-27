@@ -3,7 +3,8 @@ import TextBlock from "../TextBlock/TextBlock"
 export default ({
     pic,
     name,
-    text
+    text,
+    type
 }) => {
 
     return <div
@@ -13,7 +14,8 @@ export default ({
             alignItems: "flex-start"
         }}
     >
-        <img src={pic} alt="" width="100"/>
+        {type === "fa" && <i className={`fa fa-${pic}`}/>}
+        {!type && <img src={pic} alt="" width="100"/>}
         <TextBlock name={name} text={text}/>
     </div>
 }
