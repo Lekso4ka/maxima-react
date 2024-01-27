@@ -7,6 +7,7 @@ import SimpleCard from "./components/SimpleCard";
 
 import pic1 from "./assets/images/pic1.png";
 import pic2 from "./assets/images/pic2.png";
+import Modal from "./components/Modal";
 
 // https://habr.com/ru/articles/358090/
 
@@ -27,6 +28,7 @@ const App = () => {
         [сама изменяемая переменная, функция, которая будет изменять эту переменную] = useState(значение переменной, заданное по умолчанию)
     */
     const [n, changeN] = useState(10);
+    const [openModal, setOpenModal] = useState(true);
     
     const clickMinus = () => {
         changeN(n - 1)
@@ -79,6 +81,7 @@ const App = () => {
                 />)
             }
         </Layout>
+        {openModal && <Modal setOpenModal={setOpenModal}/>}
     </>
 }
 
