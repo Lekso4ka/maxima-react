@@ -19,6 +19,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a.active {
+  color: skyblue;
+}
 .weather-card {
   border-radius: 10px;
   display: flex;

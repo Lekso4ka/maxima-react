@@ -1,10 +1,9 @@
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import "./style.css";
 
 export default () => {
     return <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/page">Page</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/catalog">Catalog</NavLink>
     </nav>
 }
