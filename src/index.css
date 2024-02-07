@@ -15,7 +15,10 @@ h1 {
   color: blue;
   margin: 0;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .weather-card {
   border-radius: 10px;
   display: flex;
