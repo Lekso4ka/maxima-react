@@ -10,6 +10,8 @@ import pic1 from "./assets/images/pic1.png";
 import pic2 from "./assets/images/pic2.png";
 import Modal from "./components/Modal";
 
+import spaceData from "./assets/data/space.json";
+import images from "./assets/images";
 // https://habr.com/ru/articles/358090/
 
 const counterSt = {
@@ -49,7 +51,13 @@ const App = () => {
             />
         </header>
         <FunBlock/>
-        <Layout/>
+        <Layout>
+        {spaceData.map(item => <SimpleCard 
+            key={item.text}
+            name={item.text}
+            pic={images[item.img]}
+        />)}
+        </Layout>
         <Layout>
             <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, quod.</h1>
         </Layout>
@@ -67,7 +75,7 @@ const App = () => {
                 />)
             }
         </Layout>
-        
+            
         <Layout>
             <div style={counterSt}>
                 <button onClick={clickMinus}>-</button>
