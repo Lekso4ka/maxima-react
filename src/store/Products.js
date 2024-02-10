@@ -2,10 +2,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     data: [
-        {name: "Огурцы", price: 120},
-        {name: "Томаты", price: 190},
-        {name: "Капуста", price: 80},
-        {name: "Редис", price: 200}
+        {name: "Car", price: 120},
+        {name: "Book", price: 241},
     ]
 }
 

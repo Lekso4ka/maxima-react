@@ -1,8 +1,9 @@
-const basket = [
-    {name: "Огурцы", price: 120, cnt: 3},
-    {name: "Капуста", price: 80, cnt: 1},
-]
+import {useSelector, useDispatch} from "react-redux";
+import { delFromBasket } from "../../store/Basket"; 
+
 export default () => {
+    const basket = useSelector(state => state.basket.data)
+    const dispatch = useDispatch()
     return <>
         <h2>Корзина</h2>
         <table>
@@ -20,7 +21,9 @@ export default () => {
                     <td>{pro.price}</td>
                     <td>{pro.cnt}</td>
                     <td>
-                        <button>Удалить</button>
+                        <button
+                            onClick={() => dispatch(delFromBasket(pro.name))}
+                        >Удалить</button>
                     </td>
                 </tr>)}
             </tbody>

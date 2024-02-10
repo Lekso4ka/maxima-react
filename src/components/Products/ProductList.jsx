@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { addProduct, delProduct } from "../../store/Products";
-
+import { addToBasket } from "../../store/Basket"; 
 
 export default () => {
 
@@ -36,6 +36,10 @@ export default () => {
         setNewPrice("");
     }
 
+    const buy = (obj) => {
+        dispatch(addToBasket(obj))
+    }
+
 
     return <>
         <h1>Продукты</h1>
@@ -53,7 +57,7 @@ export default () => {
                     <td>{pro.name}</td>
                     <td>{pro.price}</td>
                     <td>
-                        <button>Купить</button>
+                        <button onClick={(e) => buy(pro)}>Купить</button>
                     </td>
                     <td>
                         <button onClick={(e) => delHandler(pro.name)}>
