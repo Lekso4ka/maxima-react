@@ -68,3 +68,44 @@ header {
   display: flex;
   justify-content: flex-end;
 }
+
+
+
+
+.pro {
+  padding: 30px;
+  display: grid;
+  gap: 30px;
+}
+.pro h1 {
+  color: #222;
+}
+.pro table {
+  width: 500px;
+  border-collapse: collapse;
+  margin: auto;
+}
+.pro thead {
+  background-color: silver;
+  color: #fff;
+}
+.pro td, .pro th {
+  text-align: left;
+  /* border: 1px solid; */
+  padding: 4px 10px;
+}
+.pro td>* {
+  width: 100%;
+}
+.pro .btns>* {
+  width: max-content;
+}
+.pro tfoot td {
+  text-align: right;
+}
+.pro tfoot td button {
+  width: max-content;
+}
+.pro h2 {
+  text-align: center;
+}
