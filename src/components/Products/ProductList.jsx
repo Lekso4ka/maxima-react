@@ -1,28 +1,39 @@
 import {useState} from "react";
-import {useSelector} from "react-redux"
+import {useSelector, useDispatch} from "react-redux";
+import { addProduct, delProduct } from "../../store/Products";
 
 
 export default () => {
 
     const products = useSelector(state => state.products);
 
+    const dispatch = useDispatch();
+
     const [activeLine, setActiveLine] = useState(false);
     const [newPro, setNewPro] = useState("");
-    const [newPrice, setNewPrice] = useState(null);
+    const [newPrice, setNewPrice] = useState("");
 
     const addHandler = () => {
         setActiveLine(true);
     }
+    const delHandler = (name) => {
+        dispatch(delProduct(name));
+    }
 
     const addDoneHandler = () => {
+        const pro = {
+            name: newPro,
+            price: +newPrice
+        }
+        dispatch(addProduct(pro))
         setActiveLine(false);
         setNewPro("");
-        setNewPrice(null);
+        setNewPrice("");
     }
     const addCancelHandler = () => {
         setActiveLine(false);
         setNewPro("");
-        setNewPrice(null);
+        setNewPrice("");
     }
 
 
@@ -34,6 +45,7 @@ export default () => {
                     <th>Продукт</th>
                     <th>Цена / кг</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +54,11 @@ export default () => {
                     <td>{pro.price}</td>
                     <td>
                         <button>Купить</button>
+                    </td>
+                    <td>
+                        <button onClick={(e) => delHandler(pro.name)}>
+                            <i className="fa fa-window-close"/>
+                        </button>
                     </td>
                 </tr>)}
                 {activeLine && <tr>
