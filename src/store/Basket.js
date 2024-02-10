@@ -18,7 +18,8 @@ const BasketSlice = createSlice({
                     return el;
                 })
             } else {
-                state.data.push({...action.payload, cnt: 1});
+                // state.data.push({...action.payload, cnt: 1});
+                state.data = [...state.data, {...action.payload, cnt: 1}];
             }
         },
         delFromBasket(state, action) {
