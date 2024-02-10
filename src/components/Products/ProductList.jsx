@@ -1,13 +1,11 @@
 import {useState} from "react";
+import {useSelector} from "react-redux"
 
-const products = [
-    {name: "Огурцы", price: 120},
-    {name: "Томаты", price: 190},
-    {name: "Капуста", price: 80},
-    {name: "Редис", price: 200},
-]
 
 export default () => {
+
+    const products = useSelector(state => state.products);
+
     const [activeLine, setActiveLine] = useState(false);
     const [newPro, setNewPro] = useState("");
     const [newPrice, setNewPrice] = useState(null);
@@ -39,7 +37,7 @@ export default () => {
                 </tr>
             </thead>
             <tbody>
-                {products.map((pro, i) => <tr key={i}>
+                {products.data.map((pro, i) => <tr key={i}>
                     <td>{pro.name}</td>
                     <td>{pro.price}</td>
                     <td>

@@ -4,6 +4,7 @@
 */
 
 import React from "react";
+import {Provider} from "react-redux";
 import {createRoot} from "react-dom/client";
 import {HashRouter} from "react-router-dom";
 
@@ -12,7 +13,11 @@ import App from "./App";
 import "./index.css";
 import "font-awesome/css/font-awesome.min.css"
 
+import store from "./store";
+
 const tag = createRoot(document.getElementById("root"));
-tag.render(<HashRouter>
-  <App/>
-</HashRouter>)
+tag.render(<Provider store={store}>
+  <HashRouter>
+    <App/>
+  </HashRouter>
+</Provider>)
