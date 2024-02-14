@@ -7,6 +7,8 @@ import Page from "./pages/Page"
 import Menu from "./components/Menu"
 import Layout from "./components/Layout";
 import Products from "./pages/Products";
+import Boots from "./pages/Boots";
+import Libs from "./pages/Libs";
 
 export const Ctx = createContext({});
 
@@ -25,6 +27,8 @@ export default () => {
             <Route path="/catalog" element={<Catalog/>}/>
             <Route path="/products" element={<Products/>}/>
             <Route path="/page/:name" element={<Page/>}/>
+            <Route path="/b" element={<Boots/>}/>
+            <Route path="/l" element={<Libs/>}/>
         </Routes>
     </Ctx.Provider>
 }

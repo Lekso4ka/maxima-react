@@ -10,8 +10,9 @@ import {HashRouter} from "react-router-dom";
 
 import App from "./App";
 
+import "font-awesome/css/font-awesome.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import "font-awesome/css/font-awesome.min.css"
 
 import store from "./store";
 
