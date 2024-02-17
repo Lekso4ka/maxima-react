@@ -6,7 +6,7 @@
 */
 
 import {Row, Col} from "antd";
-// import {Grid} from "@mui/material";
+import {Grid} from "@mui/material";
 import images from "../assets/images";
 
 export default () => {
@@ -22,7 +22,7 @@ export default () => {
                 </Col>
             )}
         </Row>
-        {/* <Grid container>
+        <Grid container>
             <Grid xs={12}>
                 <h2>MUI</h2>
             </Grid>
@@ -32,6 +32,6 @@ export default () => {
                     {item[0]}
                 </Grid>
             )}
-        </Grid> */}
+        </Grid>
     </>
 }

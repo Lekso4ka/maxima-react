@@ -28,7 +28,9 @@ export const NewsImg = styled.div`
     background-position: center;
     backgound-size: ${({format}) => format === "png" 
         ? "contain" 
-        : "cover"
+        : format === "jpg" 
+            ? "auto 100%"
+            : "cover"
     }
     background-repeat: no-repeat;
 `
@@ -39,5 +41,9 @@ export const CardContentSt = styled.div`
     gap: 16px;
     h3 {
         margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 20px;
+        font-size: 16px;
     }
 `
