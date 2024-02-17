@@ -6,5 +6,6 @@ export default () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/catalog">Catalog</NavLink>
         <NavLink to="/products">Products</NavLink>
+        <NavLink to="/news">News</NavLink>
     </nav>
 }

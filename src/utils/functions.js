@@ -1,8 +1,8 @@
 export const randNumber = function(max = 100, min = 0) {
     return Math.floor(Math.random() * (max - min) + min);
 }
-export const getRGB = () => {
-    return `rgb(${randNumber(256)}, ${randNumber(256)}, ${randNumber(256)})`
+export const getRGB = (a = 1) => {
+    return `rgba(${randNumber(256)}, ${randNumber(256)}, ${randNumber(256)}, ${a})`
 }
 export const getArray = (n) => {
     const arr = [];
